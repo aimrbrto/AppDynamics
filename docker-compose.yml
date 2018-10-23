@@ -4,17 +4,17 @@ services:
   rest:
     #Uncomment line below if you want to build from Github source code
     #Otherwise it will pull pre-built images from Docker Hub
-    #build: ./rest
+    build: ./rest
     container_name: rest
-    image: appdynamics/sample-app-rest
+    #image: appdynamics/sample-app-rest
     environment:
-      - CONTROLLER_URL=
-      - CONTROLLER_PORT=
-      - CONTROLLER_ACCOUNT_NAME=
-      - CONTROLLER_ACCESS_KEY=
-      - PORTAL_USERNAME=
+      - CONTROLLER_URL=turing201810221433383.saas.appdynamics.com
+      - CONTROLLER_PORT=443
+      - CONTROLLER_ACCOUNT_NAME=turing201810221433383
+      - CONTROLLER_ACCESS_KEY=jyys5nnvnjud
+      - PORTAL_USERNAME=roberto@aimmanager.com
       - PORTAL_PASSWORD=
-      - AGENT_VERSION=
+      - AGENT_VERSION=4.4.1.4
     links:
       - db
     ports: 
@@ -31,15 +31,15 @@ services:
   web:
     #Uncomment line below if you want to build from Github source code
     #Otherwise it will pull pre-built images from Docker Hub
-    #build: ./web
+    build: ./web
     container_name: web
-    image: appdynamics/sample-app-web
+    #image: appdynamics/sample-app-web
     environment:
-      - CONTROLLER_URL=
-      - CONTROLLER_PORT=
-      - CONTROLLER_ACCOUNT_NAME=
-      - CONTROLLER_ACCESS_KEY=
-      - APP_ID=
+      - CONTROLLER_URL=turing201810221433383.saas.appdynamics.com
+      - CONTROLLER_PORT=443
+      - CONTROLLER_ACCOUNT_NAME=turing201810221433383
+      - CONTROLLER_ACCESS_KEY=jyys5nnvnjud
+      - APP_ID=269166
     links:
       - rest
       - db
